@@ -27,7 +27,7 @@ export default function Signup() {
                 dispatch(updateUser(values));
                 dispatch(resetEditableFormValue());
             } else {
-                dispatch(addUser({ id: getRandomId(), ...values }));
+                dispatch(addUser({ id: getRandomId(), selected: false, ...values }));
             }
             resetForm(initData);
             setSubmitting(false);

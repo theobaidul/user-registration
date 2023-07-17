@@ -17,8 +17,16 @@ const userSlice = createSlice({
         removeUser(state, action) {
             return state?.filter((user) => user?.id !== action?.payload?.id);
         },
+        toggleSelect(state, action) {
+            return state?.map((user) =>
+                user?.id === action?.payload?.id ? { ...user, selected: !user?.selected } : user
+            );
+        },
+        toggleSelectAll(state, action) {
+            return state?.map((user) => ({ ...user, selected: action?.payload?.allSelected }));
+        },
     },
 });
 
 export default userSlice.reducer;
-export const { addUser, updateUser, removeUser } = userSlice.actions;
+export const { addUser, updateUser, removeUser, toggleSelect, toggleSelectAll } = userSlice.actions;

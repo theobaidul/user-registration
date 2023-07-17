@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { setEditableFormValue } from '../redux/features/editForm/editableFormSlice';
-import { removeUser } from '../redux/features/user/userSlice';
+import { removeUser, toggleSelect } from '../redux/features/user/userSlice';
 
 export default function UserTableItem({ user }) {
-    const { id, fullName, email, password, confirmPassword, phoneNumber } = user || {};
+    const { id, fullName, email, password, confirmPassword, phoneNumber, selected } = user || {};
     const dispatch = useDispatch();
 
     const handleEdit = () => {
@@ -12,9 +12,15 @@ export default function UserTableItem({ user }) {
     const handleDelete = () => {
         dispatch(removeUser({ id }));
     };
+    const handleSelect = () => {
+        dispatch(toggleSelect({ id }));
+    };
 
     return (
         <tr>
+            <td>
+                <input type="checkbox" onChange={handleSelect} checked={selected} />
+            </td>
             <td>{fullName}</td>
             <td>{email}</td>
             <td>{password}</td>
