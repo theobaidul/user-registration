@@ -1,0 +1,17 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+.table th {
+    background: #f2f2f2;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}

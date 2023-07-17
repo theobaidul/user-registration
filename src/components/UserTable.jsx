@@ -1,33 +1,20 @@
 import { useSelector } from 'react-redux';
+import Styles from '../assets/css/userTable.module.css';
 import UserTableItem from './UserTableItem';
-
-const styles = {
-    table: {
-        width: '100%',
-        borderCollapse: 'collapse',
-        marginTop: '20px',
-        border: '1px solid #ccc',
-    },
-    header: {
-        background: '#f2f2f2',
-        padding: '8px',
-        border: '1px solid #ccc',
-    },
-};
 
 export default function UserTable() {
     const users = useSelector((state) => state?.user || []);
 
     return (
-        <table style={styles.table}>
+        <table className={Styles.table}>
             <thead>
                 <tr>
-                    <th style={styles.header}>Full Name</th>
-                    <th style={styles.header}>Email</th>
-                    <th style={styles.header}>Password</th>
-                    <th style={styles.header}>Confirm Password</th>
-                    <th style={styles.header}>Phone Number</th>
-                    <th style={styles.header}>Actions</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Confirm Password</th>
+                    <th>Phone Number</th>
+                    <th colSpan={2}>Actions</th>
                 </tr>
             </thead>
             <tbody>
