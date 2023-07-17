@@ -15,3 +15,16 @@
     border: 1px solid #ccc;
     text-align: center;
 }
+
+.table button {
+    background-color: rgb(161, 160, 160);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: medium;
+    transition: all 0.2s linear;
+}
+.table button:hover,
+.table button:focus {
+    background-color: rgb(176, 179, 178);
+}
